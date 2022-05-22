@@ -1,6 +1,8 @@
 import React from "react";
 import SongEntry from "./SongEntry";
 import { useSelector } from "react-redux";
+import SortBar from "./SortBar";
+import FilterBar from "./FilterBar";
 
 const SongList = () => {
 
@@ -8,6 +10,8 @@ const SongList = () => {
 
     return (
         <main>
+            <SortBar />
+            <FilterBar />
             <ul>
                 <li key="categories">
                     <span>Song Title - </span>
@@ -16,7 +20,11 @@ const SongList = () => {
                     <span>Rating</span>
                 </li>
                 {songs.map(function (e) {
-                    return <SongEntry key={e.id} props={e} />
+                    if (e.visible === false) {
+                        return
+                    } else {
+                        return <SongEntry key={e.id} props={e} />
+                    }
                 })}
             </ul>
         </main>

@@ -22,17 +22,22 @@ const AddSong = () => {
 
     const addSongFromForm = (event) => {
         event.preventDefault();
-        const { title, artist, genre, rating } = event.target;
-        const randomId = v4();
-        const songObject = {
-            title: title.value,
-            artist: artist.value,
-            genre: genre.value,
-            rating: rating.value,
-            id: randomId
+        if (event.target.title.value && event.target.artist.value) {
+            const { title, artist, genre, rating } = event.target;
+            const randomId = v4();
+            const songObject = {
+                title: title.value,
+                artist: artist.value,
+                genre: genre.value,
+                rating: rating.value,
+                id: randomId,
+                visible: true
+            }
+            dispatch(addSong(songObject));
+            clearInputForm();
+        } else {
+            alert("Please fill out all fields")
         }
-        dispatch(addSong(songObject));
-        clearInputForm();
     }
 
     return (
@@ -76,6 +81,7 @@ const AddSong = () => {
                 <option value="5">Five Stars</option>
             </select>
             <button>Submit</button>
+
         </form>
     )
 }
