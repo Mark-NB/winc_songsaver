@@ -4,7 +4,8 @@ import Header from '../components/Header';
 import SongList from '../components/SongList';
 import About from '../components/About';
 import { useSelector } from 'react-redux';
-import './App.css';
+import '../styles/normalize.css'
+import '../styles/App.css';
 
 function App() {
 
@@ -13,9 +14,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      { aboutAppToggle ? "" : <AddSong />}
-      { aboutAppToggle ? "" : <SongList />}
-      { aboutAppToggle ? <About /> : ""}
+      {aboutAppToggle ? "" : <AddSong />}
+      {aboutAppToggle ? "" : <SongList />}
+      {aboutAppToggle ? <About /> : ""}
     </div>
   );
 }

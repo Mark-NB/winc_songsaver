@@ -8,10 +8,13 @@ const Header = () => {
     const aboutAppToggle = useSelector((state) => state.about[0]);
 
     return (
-        <header>
-            <h1>Songsaver</h1>
-            <nav>
-                <button onClick={() => dispatch(toggleAboutApp())}>{aboutAppToggle ? "Back to App" : "About this app"}</button>
+        <header className="header">
+            <h1 className="header__text">Songsaver</h1>
+            <nav className="header__nav">
+                <button
+                    className="header__btn"
+                    onClick={() => dispatch(toggleAboutApp())}>{aboutAppToggle ? "Back to App" : "About this app"}
+                </button>
             </nav>
         </header>
     )

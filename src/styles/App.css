@@ -1,0 +1,111 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.header {
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.header__text {
+    text-align: center;
+    margin: 0;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+
+.addsong {
+    width: 75%;
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.addsong__form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.songlist {
+    width: 90%;
+    max-width: 900px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 25px auto;
+}
+
+.songlist__sortbar {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.songlist__filterbar {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.songlist__select {
+    margin: 0 5px;
+}
+
+.songlist__list {
+    width: 80%;
+    margin: 25px auto;
+    list-style: none;
+    padding: 0;
+}
+
+.songlist__categories {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 10px 0;
+}
+
+.songlist__categories>span {
+    text-align: center;
+}
+
+.songlist__entry {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.songlist__entry>span {
+    text-align: center;
+}
+
+.songlist__entry>button {
+    width: 50%;
+    height: 90%;
+}
+
+.songlist__entry:nth-child(odd) {
+    background-color: azure;
+}
+
+.songlist__entry:nth-child(even) {
+    background-color: antiquewhite;
+}
+
+.about-section {
+    width: 80%;
+    max-width: 800px;
+    margin: 25px auto;
+}

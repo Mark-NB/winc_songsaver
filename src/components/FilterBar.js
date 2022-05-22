@@ -10,13 +10,15 @@ const FilterBar = () => {
     const dispatch = useDispatch();
 
     return (
-        <section>
-            <span>filter by genre</span>
+        <section className="songlist__filterbar">
+            <span>Filter by Genre</span>
             <select
+                className="songlist__select"
                 value={genreFilter}
                 onChange={(e) => {
                     setGenreFilter(e.target.value)
                     dispatch(filterSongsGenre(e.target.value))
+                    setRatingFilter("none")
                 }}
                 name='genreFilter'
             >
@@ -27,12 +29,14 @@ const FilterBar = () => {
                 <option value="Classical">Classical</option>
                 <option value="Dance">Dance</option>
             </select>
-            <span>or filter by rating</span>
+            <span>or Filter by Rating</span>
             <select
+                className="songlist__select"
                 value={ratingFilter}
                 onChange={(e) => {
                     setRatingFilter(e.target.value)
                     dispatch(filterSongsRating(e.target.value))
+                    setGenreFilter("none")
                 }}
                 name='ratingFilter'
             >

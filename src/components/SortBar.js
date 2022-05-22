@@ -7,7 +7,7 @@ const SortBar = () => {
     const dispatch= useDispatch()
 
     return (
-        <section>
+        <section className="songlist__sortbar">
             <button onClick={() => dispatch(sortSongs('title'))}>Sort by title</button>
             <button onClick={() => dispatch(sortSongs('artist'))}>Sort by artist</button>
             <button onClick={() => dispatch(sortSongs('rating'))}>Sort by rating</button>

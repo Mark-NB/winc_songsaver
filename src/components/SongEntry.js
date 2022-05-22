@@ -13,12 +13,12 @@ const SongEntry = (props) => {
     }
 
     return (
-        <li>
-            <span>{props.props.title} - </span>
-            <span>{props.props.artist} - </span>
-            <span>{props.props.genre} - </span>
+        <li className="songlist__entry">
+            <span>{props.props.title}</span>
+            <span>{props.props.artist}</span>
+            <span>{props.props.genre}</span>
             <span>{props.props.rating} stars</span>
-            <button onClick={() => deleteEntry(props.props.id)}>Delete</button>
+            <button onClick={() => deleteEntry(props.props.id)}>X</button>
         </li>
     )
 }
