@@ -4,6 +4,7 @@ import { toggleAboutApp } from "../features/about_app/aboutAppSlice";
 
 const Header = () => {
 
+    //logic to siwtch between app and about
     const dispatch = useDispatch();
     const aboutAppToggle = useSelector((state) => state.about[0]);
 

@@ -6,7 +6,7 @@ const SongEntry = (props) => {
 
     const dispatch = useDispatch()
 
-
+    //delete logic based on item id
     const deleteEntry = (id) => {
         console.log(id);
         dispatch(deleteSong(id));

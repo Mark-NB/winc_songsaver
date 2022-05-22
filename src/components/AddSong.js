@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { v4 } from 'uuid';
 import { addSong } from "../features/song/songSlice";
 
-
-
 const AddSong = () => {
 
     const dispatch = useDispatch();
+    const inputRef = useRef();
     const [titleField, setTitleField] = useState("");
     const [artistField, setArtistField] = useState("");
     const [genreField, setGenreField] = useState("Jazz");
@@ -20,11 +19,12 @@ const AddSong = () => {
         setRatingField(3);
     }
 
+    //creates song object based on form input and dispacthes to song reducer
     const addSongFromForm = (event) => {
         event.preventDefault();
         if (event.target.title.value && event.target.artist.value) {
             const { title, artist, genre, rating } = event.target;
-            const randomId = v4();
+            const randomId = v4(); //uuid for random id gen
             const songObject = {
                 title: title.value,
                 artist: artist.value,
@@ -34,6 +34,7 @@ const AddSong = () => {
                 visible: true
             }
             dispatch(addSong(songObject));
+            inputRef.current.focus();
             clearInputForm();
         } else {
             alert("Please fill out all fields")
@@ -44,6 +45,7 @@ const AddSong = () => {
         <section className="addsong">
             <form className="addsong__form" onSubmit={addSongFromForm}>
                 <input
+                    ref={inputRef}
                     type="text"
                     value={titleField}
                     name="title"

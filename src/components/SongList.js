@@ -20,8 +20,8 @@ const SongList = () => {
                     <span>Rating</span>
                     <span>Delete</span>
                 </li>
-                {songs.map(function (e) {
-                    if (e.visible === false) {
+                {songs.map((e) => {
+                    if (e.visible === false) { //conditional render based on filter settings
                         return
                     } else {
                         return <SongEntry key={e.id} props={e} />
@@ -30,7 +30,6 @@ const SongList = () => {
             </ul>
         </main>
     )
-
 
 }
 

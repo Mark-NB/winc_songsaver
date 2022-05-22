@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
+//manages array of song objects
 export const songSlice = createSlice({
     name: "song",
     initialState,

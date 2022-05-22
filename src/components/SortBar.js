@@ -4,7 +4,7 @@ import { sortSongs } from "../features/song/songSlice";
 
 const SortBar = () => {
 
-    const dispatch= useDispatch()
+    const dispatch = useDispatch()
 
     return (
         <section className="songlist__sortbar">

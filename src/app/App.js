@@ -9,6 +9,7 @@ import '../styles/App.css';
 
 function App() {
 
+  //seperate store state to toggle between app and about
   const aboutAppToggle = useSelector((state) => state.about[0]);
 
   return (
